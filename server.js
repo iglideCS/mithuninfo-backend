@@ -29,6 +29,13 @@ app.use(cors(corsOption));
 //Middleware
 app.use(express.json());
 
+
+app.get("/api/health", (req, res) => {
+    res.send({
+        status: "OK"
+    });
+});
+
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", achievementRoute);
