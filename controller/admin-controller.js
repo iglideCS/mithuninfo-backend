@@ -6,7 +6,7 @@ const getAllAdminsData = async (req, res, next) => {
         const users = await User.find({ isAdmin: true }, { password: 0 });
 
         if (!users || users.length === 0) {
-            return res.status(404).json({ message: "No Admin Found" });
+            return res.status(404).json({ message: "No admin found" });
         }
 
         return res.status(200).json(users);
@@ -21,7 +21,7 @@ const getAllUsersData = async (req, res, next) => {
         const users = await User.find({ isAdmin: false }, { password: 0 });
         
         if (!users || users.length === 0) {
-            return res.status(404).json({ message: "No users Exist" });
+            return res.status(404).json({ message: "No users exist" });
         }
 
         return res.status(200).json(users);
@@ -36,7 +36,7 @@ const getAllContactsData = async (req, res, next) => {
         const contacts = await Contact.find();
 
         if (!contacts || contacts.length === 0) {
-            return res.status(404).json({ message: "No contacts Exist" });
+            return res.status(404).json({ message: "No contacts exist" });
         }
 
         return res.status(200).json(contacts);

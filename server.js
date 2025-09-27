@@ -18,7 +18,7 @@ const originUrl = process.env.NODE_ENV==='production' ? 'https://mithuninfo.verc
 console.log("Origin Url:", originUrl);
 
 const corsOption = {
-    origin: 'https://mithuninfo.vercel.app',
+    origin: originUrl,
     methods: "GET, POST, PUT, DELETE, HEAD, PATCH",
     credentials: true,
 };
